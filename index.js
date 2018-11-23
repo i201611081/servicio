@@ -4,8 +4,10 @@ const app = express();
 
 app.use(bodyParser.json());
 
-const login  = require("./lib/controlador/login.js")
+const controladorUsuario  = require("./lib/controlador/usuario.js")
+const controladorPlato  = require("./lib/controlador/plato.js")
 
-app.post("/",login);
+app.post("/login",controladorUsuario.login);
+app.post("/listarMenuDia",controladorPlato.listarMenuDia);
 
 app.listen(3000);
